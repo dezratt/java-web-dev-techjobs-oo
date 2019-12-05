@@ -53,6 +53,27 @@ public class Job {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
 
+    @Override
+    public String toString() {
+        if (this.name == "") {
+            this.name = "Data not available";
+        } if (this.employer.getValue() == "") {
+            this.employer.setValue("Data not available");
+        } if (this.location.getValue() == "") {
+            this.location.setValue("Data not available");
+        } if (this.positionType.getValue() == "") {
+            this.positionType.setValue("Data not available");
+        } if (this.coreCompetency.getValue() == "") {
+            this.coreCompetency.setValue("Data not available");
+        }
+        return "ID=" + id + "\n" +
+                "Name:" + name + "\n" +
+                "Employer:" + employer + "\n" +
+                "Location:" + location + "\n" +
+                "Position Type:" + positionType + "\n" +
+                "Core Competency:" + coreCompetency + "\n";
+
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
